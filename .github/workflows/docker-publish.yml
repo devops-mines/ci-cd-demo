@@ -71,5 +71,5 @@ jobs:
           curl -f http://localhost:3000/api/status
           
           # Clean up
-          docker stop demo-app
-          docker rm demo-app
+          # docker stop demo-app
+          # docker rm demo-app
