@@ -53,3 +53,23 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Test Docker Container
+        run: |
+          # The tags output from meta contains the full image name
+          IMAGE_TAG=$(echo "${{ steps.meta.outputs.tags }}" | head -n 1)
+          echo "Running container from image: $IMAGE_TAG"
+          
+          # Run the container in detached mode
+          docker run -d -p 3000:3000 --name demo-app $IMAGE_TAG
+          
+          # Wait a few seconds for the app to start
+          sleep 5
+          
+          # Test the backend API
+          echo "Testing API endpoint..."
+          curl -f http://localhost:3000/api/status
+          
+          # Clean up
+          docker stop demo-app
+          docker rm demo-app
