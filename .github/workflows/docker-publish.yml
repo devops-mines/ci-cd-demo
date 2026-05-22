@@ -56,12 +56,8 @@ jobs:
 
       - name: Test Docker Container
         run: |
-          # The tags output from meta contains the full image name
-          IMAGE_TAG=$(echo "${{ steps.meta.outputs.tags }}" | head -n 1)
-          echo "Running container from image: $IMAGE_TAG"
-          
-          # Run the container in detached mode
-          docker run -d -p 3000:3000 --name demo-app $IMAGE_TAG
+          docker pull ghcr.io/devops-mines/ci-cd-demo:main
+          docker run -d -p 3000:3000 --name demo-app ghcr.io/devops-mines/ci-cd-demo:main
           
           # Wait a few seconds for the app to start
           sleep 5
