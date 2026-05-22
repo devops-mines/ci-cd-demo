@@ -1,0 +1,20 @@
+{
+  "name": "ci-cd-demo",
+  "version": "1.0.0",
+  "description": "A simple frontend and backend application for CI/CD demonstration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "ci-cd",
+    "docker",
+    "github-actions"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

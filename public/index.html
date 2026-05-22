@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI/CD Demo Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container glass-panel">
+        <header>
+            <h1>CI/CD Pipeline Demo</h1>
+            <p>Automated Build & Deployment</p>
+        </header>
+
+        <main>
+            <div class="status-card">
+                <h2>Backend Status</h2>
+                <div class="status-indicator" id="status-indicator">
+                    <span class="pulse"></span>
+                    <span id="status-text">Checking connection...</span>
+                </div>
+                <div class="api-response" id="api-response">
+                    Waiting for data...
+                </div>
+                <button id="refresh-btn" class="btn">Refresh Status</button>
+            </div>
+            
+            <div class="info-section">
+                <h3>Architecture</h3>
+                <ul class="features-list">
+                    <li><span>Frontend:</span> Vanilla HTML/CSS/JS with Glassmorphism</li>
+                    <li><span>Backend:</span> Node.js & Express API</li>
+                    <li><span>Container:</span> Docker</li>
+                    <li><span>CI/CD:</span> GitHub Actions & GHCR</li>
+                </ul>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Created for demonstration purposes.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
